@@ -138,6 +138,21 @@ footer p {
     color: #f1f8f4;
 }
 
+.search {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchBar {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 2px solid #3a5a40;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
 .about {
     max-width: 800px;
     margin: 40px auto;
@@ -159,4 +174,3 @@ footer p {
 .about ul li {
     margin-bottom: 5px;
 }
-
