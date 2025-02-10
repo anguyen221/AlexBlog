@@ -22,8 +22,13 @@
         <section class="welcome">
             <h2>Welcome to my blog!</h2>
             <p>This is my blog where I share my thoughts on stuff. Look forward to more!</p>
-        </section>            
-        <section class="blog-posts">
+        </section>
+    
+        <section class="search">
+            <input type="text" id="searchBar" placeholder="Search blog posts..." onkeyup="searchPosts()">
+        </section>    
+    
+        <section class="blog-posts" id="blogPosts">
             <article class="post">
                 <h2><a href="post1.html">First Post</a></h2>
                 <p class="excerpt">This is the first post!</p>
@@ -42,7 +47,7 @@
             </article>            
         </section>
     </main>
-
+    <script src="script.js"></script>
     <footer>
         <p>&copy; 2025 AlexBlog. All rights reserved.</p>
     </footer>
