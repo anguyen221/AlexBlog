@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup - AlexBlog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="index.html">AlexBlog</a></h1>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auth-form">
+            <h2 id="formTitle">Login</h2>
+
+            <input type="email" id="authEmail" placeholder="Email" required>
+            <input type="password" id="authPassword" placeholder="Password" required>
+
+            <button id="authButton" onclick="handleAuth()">Login</button>
+
+            <p id="toggleText">Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+        </section>
+    </main>
+
+    <script src="auth.js" type="module"></script>
+</body>
+</html>

@@ -14,6 +14,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="auth.html" id="authLink">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -57,15 +58,35 @@
     </footer>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+    
         const firebaseConfig = {
-          apiKey: "AIzaSyCX2p_1Jtb-myXDiPrTnFtu6O4wBB4QigQ",
-          authDomain: "alexblog-772b4.firebaseapp.com",
-          projectId: "alexblog-772b4",
-          storageBucket: "alexblog-772b4.firebasestorage.app",
-          messagingSenderId: "467282953953",
-          appId: "1:467282953953:web:badc35c42c3f89ec50d9a0"
+            apiKey: "AIzaSyCX2p_1Jtb-myXDiPrTnFtu6O4wBB4QigQ",
+            authDomain: "alexblog-772b4.firebaseapp.com",
+            projectId: "alexblog-772b4",
+            storageBucket: "alexblog-772b4.firebasestorage.app",
+            messagingSenderId: "467282953953",
+            appId: "1:467282953953:web:badc35c42c3f89ec50d9a0"
         };
+    
         const app = initializeApp(firebaseConfig);
-      </script>
+        const auth = getAuth(app);
+    
+        onAuthStateChanged(auth, (user) => {
+            const authLink = document.getElementById("authLink");
+            if (user) {
+                authLink.textContent = "Logout";
+                authLink.href = "#";
+                authLink.onclick = () => {
+                    signOut(auth).then(() => {
+                        window.location.href = "index.html";
+                    });
+                };
+            } else {
+                authLink.textContent = "Login";
+                authLink.href = "auth.html";
+            }
+        });
+    </script>
 </body>
 </html>
